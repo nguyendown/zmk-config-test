@@ -12,3 +12,6 @@
 #     shield: reviung41
 #
 ---
+include:
+  - board: blackpill_f401cc
+    shield: cresk
