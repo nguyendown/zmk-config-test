@@ -16,7 +16,6 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
-        zephyr,console = &cdc_acm_uart0;
     };
 
     aliases {
@@ -50,8 +49,8 @@
     clocks = <&pll>;
     clock-frequency = <DT_FREQ_M(84)>;
     ahb-prescaler = <1>;
-    apb1-prescaler = <2>;
-    apb2-prescaler = <1>;
+    apb1-prescaler = <4>;
+    apb2-prescaler = <4>;
 };
 
 &rtc {
@@ -62,10 +61,7 @@
     pinctrl-0 = <&usb_otg_fs_dm_pa11 &usb_otg_fs_dp_pa12>;
     pinctrl-names = "default";
     status = "okay";
-    cdc_acm_uart0: cdc_acm_uart0 {
-        compatible = "zephyr,cdc-acm-uart";
-        label = "CDC_ACM_0";
-    };
+    maximum-speed = "low-speed";
 };
 
 &i2c1 {
