@@ -49,7 +49,7 @@
     clocks = <&pll>;
     clock-frequency = <DT_FREQ_M(84)>;
     ahb-prescaler = <1>;
-    apb1-prescaler = <4>;
+    apb1-prescaler = <8>;
     apb2-prescaler = <4>;
 };
 
