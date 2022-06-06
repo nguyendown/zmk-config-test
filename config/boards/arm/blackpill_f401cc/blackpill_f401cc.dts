@@ -16,6 +16,7 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
+        zephyr,console = &cdc_acm_uart0;
     };
 
     aliases {
@@ -60,8 +61,12 @@
 &usbotg_fs {
     pinctrl-0 = <&usb_otg_fs_dm_pa11 &usb_otg_fs_dp_pa12>;
     pinctrl-names = "default";
-    status = "okay";
     maximum-speed = "low-speed";
+    status = "okay";
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+        label = "CDC_ACM_0";
+    };
 };
 
 &i2c1 {
